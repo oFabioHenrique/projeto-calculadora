@@ -61,7 +61,10 @@ function calcularDiv(div1, div2) {
     let NumberDiv2 = Number(div2)
     if (NumberDiv1 == '0' && NumberDiv2 == '0'){
         alert(`Impossível efetuar operação com campos vazios`)
-    } else {
+     } else if (NumberDiv2 == '0') {
+        alert(`Impossível efetuar divisão por 0`)
+     }
+    else {
         let resultado = NumberDiv1 / NumberDiv2
         document.getElementById('resultadoDiv').innerHTML = `Resultado da divisão é: [${resultado}]`
     }
