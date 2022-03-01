@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadoras</title>
+    <link href="https://fonts.googleapis.com/css2?family=BhuTuka+Expanded+One&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon/favicon.ico">
+    <script src="https://kit.fontawesome.com/01639c5f77.js" crossorigin="anonymous"></script>   
+
+    <style>
+        * {
+            box-sizing: border-box;
+            text-align: center;   
+        }
+        header, div {
+            color: white;
+        }
+        #eq, #sub, #divi {
+            background-image: linear-gradient(#222, rgb(120, 63, 63), #222);
+        }
+        #soma, #multi {
+            background-image: linear-gradient(#222,rgb(120, 63, 63), #222);
+        }
+        body {
+            background-color: #222;
+            font-family: 'BhuTuka Expanded One', cursive;
+        }
+        section {
+            position: relative;
+        }
+        section input {
+            font-size: 14px;
+            width: 100px;
+            margin: 0px 5px 30px 0px;  
+            
+        }
+        label, p {
+            font-weight: bold;
+            padding: 5px;
+            margin-right: 10px;
+            font-size: 18px;
+        }
+        p {
+            letter-spacing: 8px;
+            border: none;
+            margin-bottom: 0px;
+        }
+        button {
+            width: 95px;
+            height: 30px;   
+            font-weight: bold;
+        }
+        /* classe manipulada no JS */
+        .buttonAumentarLento {
+            transform: scale(1.3);
+            transition: 1s all;
+        }
+        .buttonDiminuirLento {
+            transform: scale(1);
+            transition: 1s all;
+        }
+        /* classe manipulada no JS */
+        .btnMenor {
+            width: 95px;
+            height: 34px;
+        }
+        #voltarAoTopo {
+            position: relative;
+            display: block;
+            float: right;
+            margin: 0 10px 10px 0;  
+            width: 50px;
+            height: 35px;
+            background-color: #222;
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 0px 3px rgb(120, 63, 63);
+            border: none;
+            
+        }
+        #voltarAoTopo:hover {
+            color: white;
+            background-color: rgb(120, 63, 63);
+            color: #222;
+            cursor: pointer;
+            transition: .7s all;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Calculadoras</h1>
+        <hr>
+    </header>
+    <main>
+        <section>
+            <div id="eq">
+                <h2>Calculadora de Equação de 2º Grau</h2>
+                <label><input type="number" id="a" placeholder="Número">X<sup>2</sup></label> 
+                <label><input type="number" id="b" placeholder="Número">X</label>  <br>
+                <label><input type="number" id="c" placeholder="Número">Independente</label>
+                <br>
+                <button onclick="cacularEq(a.value, b.value, c.value)" class="btnMenor">Calcular</button>           
+                <p id="resultadoEq">Aguardando calculo </p>   
+            </div>               
+        </section>
+        <hr>
+        <section>
+            <div id="soma">
+                <h2>Calculadora de Soma</h2>
+                <label><input type="number" id="soma1" placeholder="Número"></label>
+                <label>+</label>
+                <label><input type="number" id="soma2" placeholder="Número"></label>
+                <button onclick="calcularSoma(soma1.value, soma2.value)" class="btnMenor" id="btnMenor0">Calcular</button>
+                <p id="resultadoSoma">Aguardando calculo</p>
+            </div>
+        </section>  
+        <hr>
+        <section>
+            <div id="sub">
+                <h2>Calculadora de Subtração</h2>
+                <label><input type="number" id="sub1" placeholder="Número"></label>
+                <label>-</label>
+                <label><input type="number" id="sub2" placeholder="Número"></label>
+                <button onclick="calcularSub(sub1.value, sub2.value)" class="btnMenor" id="btnMenor1">Calcular</button>
+                <p id="resultadoSub">Aguardando calculo</p>
+            </div>
+        </section>
+        <hr>
+        <section>
+            <div id="multi">
+                <h2>Calculadora de Multiplicação</h2>
+                <label><input type="number" id="multi1" placeholder="Número"></label>
+                <label>*</label>
+                <label><input type="number" id="multi2" placeholder="Número"></label>
+                <button onclick="calcularMulti(multi1.value, multi2.value)" class="btnMenor" id="btnMenor2">Calcular</button>
+                <p id="resultadoMulti">Aguardando calculo</p>
+            </div>
+        </section>
+        <hr>
+        <section>
+            <div id="divi">
+                <h2>Calculadora de Divisão</h2>
+                <label><input type="number" id="div1" placeholder="Número"></label>
+                <label>/</label>
+                <label><input type="number" id="div2" placeholder="Número"></label>
+                <button onclick="calcularDiv(div1.value, div2.value)" class="btnMenor" id="btnMenor3">Calcular</button>
+                <p id="resultadoDiv">Aguardando calculo</p>
+            </div>
+        </section>
+        <hr>
+    </main>
+    <footer>
+        <button onclick="voltarAoTopo()" id="voltarAoTopo"><i class="fa-solid fa-angle-up"></i></button>
+    </footer>
+
+    <script src="script.js"></script> 
+
+</body>
+</html>
